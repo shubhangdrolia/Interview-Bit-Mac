@@ -1,3 +1,4 @@
+// Ignore first and last element of the array ..
 int Solution::perfectPeak(vector<int> &A) {
     
     int n = A.size();
