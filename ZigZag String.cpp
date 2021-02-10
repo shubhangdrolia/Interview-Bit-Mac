@@ -1,5 +1,7 @@
 string Solution::convert(string A, int B) {
 
+    
+// creating array of vectors and filling it in zigzag order...
 if(B == 1)
     return A;
 vector<char> v[B];
@@ -26,30 +28,20 @@ for(i; i < B; i++)
 }
 
 
-// creating new string 
 
-
+// appending array data in string row wise..
    string s;
    for (int i = 0; i < B; i++) 
    { 
         for (auto it = v[i].begin(); 
              it != v[i].end(); it++) 
              { 
-
-            s += *it; 
+            if(*it == ' ')
+                continue;
+            else
+                s += *it; 
             } 
     }
     
-    string withoutspace;
-    int len2 = s.length();
-    for(int i = 0; i < len2; i++)
-    {
-       if(s[i] == ' ')
-            continue;
-       else
-            withoutspace += s[i];
-            
-    }
-    return withoutspace;
-
+    return s;
 }
